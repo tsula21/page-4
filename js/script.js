@@ -7,12 +7,16 @@ const contact = document.querySelector('#contact');
 const body = document.querySelector('body');
 const sentSms = document.querySelector('.sent');
 const button = document.querySelector('button');
+// resp menu
+const menuBar = document.querySelector('.barMenuBtn');
+const closeMenu = document.querySelector('.closebtn');
+const allSideBar = document.querySelector('.responsive__menu');
 
 // ADRESS(URL)
-const page1 = "file:///C:/Users/user/Desktop/Themeforest_Portfolio/page_1/Themeforest_1.html";
-const page2 = "file:///C:/Users/user/Desktop/Themeforest_Portfolio/page_2/Themeforest_2.html";
-const page3 = "file:///C:/Users/user/Desktop/Themeforest_Portfolio/page_3/Themeforest_3.html";
-const page4 = "file:///C:/Users/user/Desktop/Themeforest_Portfolio/page_4/Themeforest_4.html";
+const page1 = "https://tsula21.github.io/page-1/";
+const page2 = "https://tsula21.github.io/page-2/";
+const page3 = "https://tsula21.github.io/page-3/";
+const page4 = "https://tsula21.github.io/page-4/";
 
 // Event Listeners
 // MAIN MENU
@@ -32,6 +36,9 @@ contact.addEventListener('click', () => {
     window.open(page4, '_top');
 });
 
+menuBar.addEventListener('click',openMenu);
+closeMenu.addEventListener('click',menuCloes);
+
 // SMS SENT
 
 button.addEventListener('click', showSentSms);
@@ -43,4 +50,16 @@ function showSentSms(){
 
 function hideSentSms(){
     sentSms.classList.remove('active');
+}
+
+function openMenu(){
+    menuBar.classList.add('active');
+    closeMenu.classList.add('active');
+    allSideBar.classList.add('active');
+}
+
+function menuCloes(){
+    closeMenu.classList.remove('active');
+    menuBar.classList.remove('active');
+    allSideBar.classList.remove('active');
 }
